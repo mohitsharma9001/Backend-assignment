@@ -17,3 +17,11 @@ fs.appendFile('input.txt', 'First line added!', 'utf-8', err => {
     console.log('First line written.');
     
   });
+
+  const create = fs.createWriteStream("input.txt")
+  console.log("file created")
+
+ const rename = fs.renameSync("input.txt","text.txt")
+ console.log("File rename success")
+//   const deleate = fs.unlinkSync("input.txt")
+//   console.log("deleated file")
