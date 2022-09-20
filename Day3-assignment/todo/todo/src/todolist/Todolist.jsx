@@ -15,8 +15,20 @@ console.log(todos)
     React.useEffect(()=>{
         getTodo();
     },[])
+
+const handleDelete = (id)=>{
+    console.log(todos.id)
+    fetch(`http://localhost:3002/todo/${id}`,{
+        method : "DELETE"
+    }).then(()=>getTodo())
+}
+
   return   loding ? (<div>Loding...</div>) : error ? (<h3>Somthing Went Wrong</h3>) :  (<div>{todos.map((todo)=>(<div key={todo.id}>
-   <h3>{todo.name}</h3>
+    <div style={{display : "flex",justifyContent : "space-around"}}>
+    <h3>{todo.name}</h3><h3>{todo.role}</h3>
+    <button style={{height : "30px"}} onClick={handleDelete}> Delete</button>
+    </div>
+ 
    
  </div>))}</div>)
 }
