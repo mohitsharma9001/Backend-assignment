@@ -27,7 +27,7 @@ const validateMiddleware = (req, res, next) => {
         });
 
         if (flg) {
-            // console.log("Movie exists");
+            console.log("Movie exists");
             next();
         }
         else res.send(`Error 404 !`);
