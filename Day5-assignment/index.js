@@ -49,7 +49,6 @@ async function test(){
  },{
   age : 200
  })
- console.log("user update")
-   console.log("User added")
+
 }
 test()
