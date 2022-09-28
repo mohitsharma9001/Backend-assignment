@@ -1,16 +1,16 @@
 import mongoose from "mongoose"
-import faker from "@faker-js/faker"
+import {faker} from "@faker-js/faker"
 import crypto from "crypto"
 async function connectiondata(){
 const connection =  "mongodb://127.0.0.1:27017/test"
     return new Promise((resolve,reject)=>{
     mongoose.connect(connection)
-    .then((resolve)=>{
+    .then(()=>{
         console.log('connected to database')
         resolve()
-    }).catch((reject)=>{
+    }).catch((err)=>{
         console.log('error')
-        reject()
+        reject(err)
     })
     })
 }
@@ -31,17 +31,25 @@ async function test(){
 
 
     const users = []
-    for(let i = 0;i<100;i++){
-        let user ={
-            name : faker.name.firstName(),
-            email : faker.internet.email(),
-            age : crypto.randomInt(17,55),
-            image : faker.image.avatar(),
-            balance : crypto.randomInt(0,55000),
-            varifiedMail : Boolean(crypto.randomInt(0,2))
+    // for(let i = 0;i<100;i++){
+    //     let user ={
+    //         name : faker.name.firstName(),
+    //         email : faker.internet.email(),
+    //         age : crypto.randomInt(17,55),
+    //         image : faker.image.avatar(),
+    //         balance : crypto.randomInt(0,55000),
+    //         varifiedMail : Boolean(crypto.randomInt(0,2))
        
-           }
-    }
-   
+    //        }
+    //        users.push(user)
+    // }
+    // await userModal.insertMany(users)
+ await userModal.updateMany({
+    age : 32
+ },{
+  age : 200
+ })
+ console.log("user update")
+   console.log("User added")
 }
 test()
