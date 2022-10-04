@@ -1,7 +1,7 @@
 const express = require('express');
 const connectDatabase = require('./Database/index');
 const { userRoutes } = require('./Routes/user');
-
+const {postRoutes} = require('./Routes/post')
 const app = express()
 app.use(express.json())
 
@@ -19,7 +19,7 @@ function setRequest(req, res, next) {
 app.use(logger)
 app.use(setRequest)
 app.use(userRoutes)
-
+app.use(postRoutes)
 
 let PORT = 3002; 
 connectDatabase().then(()=>{

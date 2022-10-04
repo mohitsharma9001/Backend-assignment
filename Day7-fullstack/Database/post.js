@@ -1,9 +1,9 @@
 const mongoose = require('mongoose')
 
-const post = mongoose.Schema({
+const post =new mongoose.Schema({
     author : String,
     title :{
-        type : string
+        type : String
     },
     content : String,
     user: {
@@ -12,9 +12,10 @@ const post = mongoose.Schema({
     }
 
 },{
+    
     timestamps: true
 })
 
-const postModal =new mongoose.model("Posts",postModal);
+const postModal = mongoose.model("posts",post);
 
-module.exports = {postModal}
+module.exports = postModal
