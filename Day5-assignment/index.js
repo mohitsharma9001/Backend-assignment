@@ -31,19 +31,19 @@ async function test(){
 
 
     const users = []
-    // for(let i = 0;i<100;i++){
-    //     let user ={
-    //         name : faker.name.firstName(),
-    //         email : faker.internet.email(),
-    //         age : crypto.randomInt(17,55),
-    //         image : faker.image.avatar(),
-    //         balance : crypto.randomInt(0,55000),
-    //         varifiedMail : Boolean(crypto.randomInt(0,2))
+    for(let i = 0;i<100;i++){
+        let user ={
+            name : faker.name.firstName(),
+            email : faker.internet.email(),
+            age : crypto.randomInt(17,55),
+            image : faker.image.avatar(),
+            balance : crypto.randomInt(0,55000),
+            varifiedMail : Boolean(crypto.randomInt(0,2))
        
-    //        }
-    //        users.push(user)
-    // }
-    // await userModal.insertMany(users)
+           }
+           users.push(user)
+    }
+    await userModal.insertMany(users)
  await userModal.updateMany({
     age : 32
  },{
