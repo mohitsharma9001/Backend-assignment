@@ -51,3 +51,10 @@ const User = mongoose.model('User', userSchema);
 const Category = mongoose.model('Category', categorySchema);
 const Comment = mongoose.model('Comment', commentSchema);
 const Like = mongoose.model('Like', likeSchema);
+
+
+// const Blog = mongoose.model('Blog', blogSchema);
+// const User = mongoose.model('User', userSchema);
+// const Category = mongoose.model('Category', categorySchema);
+// const Comment = mongoose.model('Comment', commentSchema);
+// const Like = mongoose.model('Like', likeSchema);
