@@ -15,13 +15,3 @@ app.listen(port,()=>{
     console.log(`server is running http://localhost:${port}`)
 })
 
-
-
-app.get("/",(req,res)=>{
-    res.end("Morgan logger app")
-})
-
-
-app.listen(port,()=>{
-    console.log(`server is running http://localhost:${port}`)
-})
